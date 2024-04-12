@@ -40,8 +40,8 @@ public partial class CustomHealth : BasePlugin, IPluginConfig<Config>
             {
                 AddTimer(0.75f, () =>
                 {
-                    playerPawn.Health = Config.SetPlayerHealth;
-                    Utilities.SetStateChanged(playerPawn, "CBaseEntity", "m_iHealth");
+                    player.PlayerPawn.Value.Health = Config.SetPlayerHealth;
+                    Utilities.SetStateChanged(player.PlayerPawn.Value, "CBaseEntity", "m_iHealth");
                 });
             });
         }
