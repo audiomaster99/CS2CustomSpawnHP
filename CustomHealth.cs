@@ -14,7 +14,7 @@ public partial class CustomHealth : BasePlugin, IPluginConfig<Config>
 {
     public override string ModuleName => "CustomSpawnHealth";
     public override string ModuleAuthor => "audio_brutalci";
-    public override string ModuleVersion => "0.0.1";
+    public override string ModuleVersion => "0.0.2";
 
     public required Config Config { get; set; }
     public void OnConfigParsed(Config config)
