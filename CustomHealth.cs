@@ -38,8 +38,11 @@ public partial class CustomHealth : BasePlugin, IPluginConfig<Config>
         {
             Server.NextFrame(() =>
             {
-                player.PlayerPawn.Value.Health = Config.SetPlayerHealth;
-                Utilities.SetStateChanged(player.PlayerPawn.Value, "CBaseEntity", "m_iHealth");
+                AddTimer(0.75f, () =>
+                {
+                    playerPawn.Health = Config.SetPlayerHealth;
+                    Utilities.SetStateChanged(playerPawn, "CBaseEntity", "m_iHealth");
+                });
             });
         }
         return HookResult.Continue;
